@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation Link Styles */
+.nav-link {
+  position: relative;
+  transition: color 0.3s;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3b82f6;
+  transition: width 0.3s;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #3b82f6;
+}
+
+.dark .nav-link.active,
+.dark .nav-link:hover {
+  color: #60a5fa;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Tag Styles */
+.skill-tag {
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+}
+
+.dark .skill-tag {
+  background-color: #1e3a8a;
+  color: #93c5fd;
+}
+
+.tech-tag {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+}
+
+.dark .tech-tag {
+  background-color: #374151;
+  color: #d1d5db;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Download Card Styles */
+.download-card {
+  transition: all 0.3s ease;
+}
+
+.download-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .download-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}

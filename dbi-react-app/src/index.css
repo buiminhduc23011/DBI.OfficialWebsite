@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-primary-50 { color: #eff6ff; }
+  .text-primary-100 { color: #dbeafe; }
+  .text-primary-200 { color: #bfdbfe; }
+  .text-primary-300 { color: #93c5fd; }
+  .text-primary-400 { color: #60a5fa; }
+  .text-primary-500 { color: #3b82f6; }
+  .text-primary-600 { color: #2563eb; }
+  .text-primary-700 { color: #1d4ed8; }
+  .text-primary-800 { color: #1e40af; }
+  .text-primary-900 { color: #1e3a8a; }
+  
+  .bg-primary-50 { background-color: #eff6ff; }
+  .bg-primary-100 { background-color: #dbeafe; }
+  .bg-primary-200 { background-color: #bfdbfe; }
+  .bg-primary-300 { background-color: #93c5fd; }
+  .bg-primary-400 { background-color: #60a5fa; }
+  .bg-primary-500 { background-color: #3b82f6; }
+  .bg-primary-600 { background-color: #2563eb; }
+  .bg-primary-700 { background-color: #1d4ed8; }
+  .bg-primary-800 { background-color: #1e40af; }
+  .bg-primary-900 { background-color: #1e3a8a; }
+  
+  .border-primary-600 { border-color: #2563eb; }
+  .hover\:bg-primary-700:hover { background-color: #1d4ed8; }
+}

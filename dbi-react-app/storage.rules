@@ -1,0 +1,17 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Allow public read access to all files
+    match /{allPaths=**} {
+      allow read: if true;
+      // Only allow write access to authenticated users
+      allow write: if request.auth != null;
+    }
+    
+    // Specific rules for dbi-modbus-slave folder
+    match /dbi-modbus-slave/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}
