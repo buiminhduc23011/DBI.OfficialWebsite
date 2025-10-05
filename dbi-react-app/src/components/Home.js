@@ -9,8 +9,8 @@ function Home() {
         Cầu nối dữ liệu cho Công nghiệp 4.0
       </h2>
       <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300 mb-8">
-        DBI là một dự án với sứ mệnh cung cấp các công cụ kết nối và thu thập dữ liệu công nghiệp một cách mạnh mẽ, linh hoạt và{' '}
-        <span className="font-semibold">hoàn toàn miễn phí</span>. Mục tiêu của chúng tôi là phá vỡ rào cản chi phí, giúp mọi kỹ sư, nhà máy đều có thể tiếp cận công nghệ IIoT.
+        DBI là một dự án với sứ mệnh cung cấp các công cụ kết nối và thu thập dữ liệu công nghiệp một cách mạnh mẽ, linh hoạt với{' '}
+        <span className="font-semibold">giá cả tối thiểu & lợi ích tối đa</span>. Mục tiêu của chúng tôi là phá vỡ rào cản chi phí, giúp mọi kỹ sư, nhà máy đều có thể tiếp cận công nghệ IIoT.
       </p>
       <Link 
         to="/ecosystem" 

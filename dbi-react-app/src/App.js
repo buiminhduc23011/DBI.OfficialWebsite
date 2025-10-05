@@ -5,6 +5,9 @@ import './App.css';
 // Components
 import Home from './components/Home';
 import Ecosystem from './components/Ecosystem';
+import Libraries from './components/Libraries';
+import ModbusDocs from './components/ModbusDocs';
+import DeltaDocs from './components/DeltaDocs';
 import Downloads from './components/Downloads';
 import AboutMe from './components/AboutMe';
 import Contact from './components/Contact';
@@ -18,7 +21,7 @@ function Navigation() {
     const savedTheme = localStorage.getItem('color-theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const shouldBeDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-    
+
     setIsDarkMode(shouldBeDark);
     if (shouldBeDark) {
       document.documentElement.classList.add('dark');
@@ -28,7 +31,7 @@ function Navigation() {
   const toggleTheme = () => {
     const newMode = !isDarkMode;
     setIsDarkMode(newMode);
-    
+
     if (newMode) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('color-theme', 'dark');
@@ -43,10 +46,11 @@ function Navigation() {
   return (
     <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-primary-600 dark:text-primary-400">
-          DBI Project
+        <Link to="/" className="flex items-center text-2xl font-bold text-primary-600 dark:text-primary-400">
+          <img src="logo.svg" alt="DBI Logo" className="w-8 h-8 mr-3" />
+          DBI Platform
         </Link>
-        
+
         <div className="hidden md:flex items-center space-x-8">
           <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
             Giới thiệu DBI
@@ -54,8 +58,11 @@ function Navigation() {
           <Link to="/ecosystem" className={`nav-link ${isActive('/ecosystem') ? 'active' : ''}`}>
             Hệ sinh thái
           </Link>
+          <Link to="/libraries" className={`nav-link ${isActive('/libraries') ? 'active' : ''}`}>
+            Thư viện
+          </Link>
           <Link to="/downloads" className={`nav-link ${isActive('/downloads') ? 'active' : ''}`}>
-            Tải về
+            Tools
           </Link>
           <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>
             Về tác giả
@@ -77,7 +84,7 @@ function Navigation() {
               </svg>
             )}
           </button>
-          
+
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden ml-4 p-2 text-gray-600 dark:text-gray-300">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -94,8 +101,11 @@ function Navigation() {
           <Link to="/ecosystem" onClick={() => setMobileMenuOpen(false)} className="block py-2 px-6 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
             Hệ sinh thái
           </Link>
+          <Link to="/libraries" onClick={() => setMobileMenuOpen(false)} className="block py-2 px-6 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
+            Thư viện
+          </Link>
           <Link to="/downloads" onClick={() => setMobileMenuOpen(false)} className="block py-2 px-6 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
-            Tải về
+            Tools
           </Link>
           <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-2 px-6 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
             Về tác giả
@@ -124,11 +134,14 @@ function App() {
     <Router>
       <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans antialiased min-h-screen flex flex-col">
         <Navigation />
-        
+
         <main className="container mx-auto p-6 md:p-8 flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/ecosystem" element={<Ecosystem />} />
+            <Route path="/libraries" element={<Libraries />} />
+            <Route path="/libraries/modbus" element={<ModbusDocs />} />
+            <Route path="/libraries/delta" element={<DeltaDocs />} />
             <Route path="/downloads" element={<Downloads />} />
             <Route path="/about" element={<AboutMe />} />
             <Route path="/contact" element={<Contact />} />

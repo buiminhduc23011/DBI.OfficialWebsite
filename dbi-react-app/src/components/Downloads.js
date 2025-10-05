@@ -15,7 +15,7 @@ function Downloads() {
 
   return (
     <section className="fade-in">
-      <h2 className="text-3xl font-bold text-center mb-8">Tải về & Bắt đầu</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">DBI Tools</h2>
       
       <div className="max-w-4xl mx-auto">
         {/* DBI ModbusSlave Section */}
@@ -26,7 +26,7 @@ function Downloads() {
             </svg>
             DBI.ModbusSlave
             <span className="ml-3 text-sm bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">
-              Google Drive
+
             </span>
           </h3>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -81,7 +81,7 @@ function Downloads() {
 
         {/* Other Downloads */}
         <div>
-          <h3 className="text-2xl font-semibold mb-4">Các tài nguyên khác</h3>
+          <h3 className="text-2xl font-semibold mb-4">Các công cụ khác</h3>
           {googleDriveFiles.otherDownloads.map((download, index) => (
             <div 
               key={index}

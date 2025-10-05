@@ -1,6 +1,6 @@
 # DBI Official Website - React App
 
-Website chính thức của DBI Project được xây dựng bằng React và deploy lên Firebase Hosting.
+Website chính thức của DBI Platform được xây dựng bằng React và deploy lên Firebase Hosting.
 
 ## Tính năng
 
